@@ -10,9 +10,29 @@ const RoomSchema = new SimpleSchema({
     roomNumber: {type: Number},
     checkIn: {type: Date},
     checkOut: {type: Date},
-    tenantId: {type: String},
-    available: {type: Boolean},
-    needCleaning: {type: Boolean},
+    tenantId: {
+        type: String,
+        autoform: {
+            type: 'select',
+            options: function(){
+                return Members.find().map((p) => {
+                    return { label: `${p.firstName} ${p.lastName}`, value: p._id };
+                });
+            }
+        }
+    },
+    available: {
+        type: Boolean,
+        autoform: {
+            type: 'boolean-select'
+        }
+    },
+    needCleaning: {
+        type: Boolean,
+        autoform: {
+            type: 'boolean-select'
+        }
+    },
     // AUTOMATICALLY CREATED FOR YOU THOUGH
     createdAt: {
         type: Date,

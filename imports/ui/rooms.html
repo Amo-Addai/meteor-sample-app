@@ -1,19 +1,27 @@
 <template name="rooms">
-    <div class="collection">
+    Click on the room to change anything
+    <ul class="collapsible" data-collapsible="accordion">
         {{#each rooms}}
             {{> room}}
         {{/each}}
-    </div>
+    </ul>
 </template>
 
 <template name="room">
-    <a href="#!" class="collection-item">
-        {{#if available}}
-            <span class="new badge" data-badge-caption="">{{roomNumber}}</span>
-        {{else}}
-            <span class="new badge red" data-badge-caption="">{{roomNumber}}</span>
-        {{/if}}
-        Available: {{#if available}} Yes {{else}} No {{/if}}<br/>
-        Tenant: {{tenantID}}
-    </a>
+    <li>
+        <div class="collapsible-header">
+            Available: {{#if available}} Yes {{else}} No {{/if}}<br/>
+            Tenant: {{returnName tenantID}}
+            {{#if available}}
+                <span class="new badge" data-badge-caption="">{{roomNumber}}</span>
+            {{else}}
+                <span class="new badge red" data-badge-caption="">{{roomNumber}}</span>
+            {{/if}}
+        </div>
+        <div class="collapsible-body">
+            <h5>Change Room Status</h5>
+            <!--ADDING autosave LETS FORM SAVE IN REAL-TIME WITHOUT HITTING 'submit' BUTTON-->
+            {{> quickForm collection="Rooms" type="update" doc=this autosave=true id=makeUniqueID}}
+        </div>
+    </li>
 </template>

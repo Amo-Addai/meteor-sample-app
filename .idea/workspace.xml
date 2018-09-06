@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f8d4124-b1d4-425a-9f74-c7615c0ba141" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/body.html" afterPath="$PROJECT_DIR$/imports/ui/body.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/rooms.js" afterPath="$PROJECT_DIR$/imports/api/rooms.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/body.js" afterPath="$PROJECT_DIR$/imports/ui/body.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/members.html" afterPath="$PROJECT_DIR$/imports/ui/members.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/rooms.html" afterPath="$PROJECT_DIR$/imports/ui/rooms.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -55,7 +51,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="members.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="body.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/body.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="members.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/members.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -65,24 +73,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rooms.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rooms.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/rooms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="374">
+              <caret line="22" column="91" lean-forward="false" selection-start-line="22" selection-start-column="91" selection-end-line="22" selection-end-column="91" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="body.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/body.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -112,8 +108,8 @@
       <file leaf-file-name="rooms.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/rooms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="425">
+              <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -137,15 +133,15 @@
       <list>
         <option value="$PROJECT_DIR$/client/imports/localcollection.js" />
         <option value="$PROJECT_DIR$/imports/api/members.js" />
-        <option value="$PROJECT_DIR$/imports/api/rooms.js" />
         <option value="$PROJECT_DIR$/client/main.html" />
         <option value="$PROJECT_DIR$/client/main.js" />
         <option value="$PROJECT_DIR$/imports/ui/body.html" />
         <option value="$PROJECT_DIR$/server/main.js" />
-        <option value="$PROJECT_DIR$/imports/ui/rooms.html" />
         <option value="$PROJECT_DIR$/imports/ui/members.html" />
-        <option value="$PROJECT_DIR$/imports/ui/body.js" />
         <option value="$PROJECT_DIR$/.meteor/packages" />
+        <option value="$PROJECT_DIR$/imports/api/rooms.js" />
+        <option value="$PROJECT_DIR$/imports/ui/body.js" />
+        <option value="$PROJECT_DIR$/imports/ui/rooms.html" />
       </list>
     </option>
   </component>
@@ -263,6 +259,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".meteor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -372,18 +382,18 @@
       <option name="presentableId" value="Default" />
       <updated>1536226539063</updated>
       <workItem from="1536226541193" duration="8520000" />
-      <workItem from="1536240873599" duration="2989000" />
+      <workItem from="1536240873599" duration="7117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11509000" />
+    <option name="totallyTimeSpent" value="15637000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="1" />
+    <frame x="676" y="0" width="697" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28072837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28072837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -428,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.meteor/versions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -450,6 +453,30 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/members.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.meteor/packages">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/body.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -473,50 +500,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/rooms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/rooms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/body.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="425">
+          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/body.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="455">
+          <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.meteor/packages">
+    <entry file="file://$PROJECT_DIR$/.meteor/versions">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="-490">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/members.html">
+    <entry file="file://$PROJECT_DIR$/imports/ui/rooms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="374">
+          <caret line="22" column="91" lean-forward="false" selection-start-line="22" selection-start-column="91" selection-end-line="22" selection-end-column="91" />
           <folding />
         </state>
       </provider>

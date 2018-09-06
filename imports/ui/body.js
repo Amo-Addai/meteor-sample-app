@@ -7,6 +7,9 @@ import './body.html';
 import './members.html';
 import './rooms.html';
 
+// THIS SETS THE DEFAULT TEMPLATE STYLING TO materialize (SO YOU CAN USE IT WELL)
+AutoForm.setDefaultTemplate('materialize');
+
 // YOU NEED TO SET THESE TO BE ABLE TO USE AUTO-FORMS
 window.Members = Members;
 window.Rooms = Rooms;
@@ -19,11 +22,6 @@ Template.body.onCreated(function(){
     Meteor.subscribe('rooms.allRooms');
 });
 
-// LIKE componentDidMount() ON REACT
-Template.members.onRendered(() => {
-    $('#modal1').modal(); // YOU CAN USE jQuery OVER HERE!!
-})
-
 // THESE HELPERS ARE GENERAL TO ALL TEMPLATES
 Template.registerHelper('formatDate', (date) => {
     // ACTUALLY, moment ISN'T A DEPENDENCY YOU INSTALLED WITH npm
@@ -35,11 +33,36 @@ Template.registerHelper('formatDate', (date) => {
 Template.members.helpers({
     members() {
         return Members.find();
-    }
+    },
+    someProp: [] // THEREFORE, THIS PROP CAN ALSO BE USED WITHIN THE TEMPLATE
 });
+
+
 Template.rooms.helpers({
     rooms() {
         return Rooms.find();
+    },
+    someProp: []
+});
+
+Template.room.helpers({
+    makeUniqueID(){
+        return this._id;
+    },
+    returnName(tenantID) {
+        const member = Members.findOne({_id: tenantID});
+        return `${member.firstNname} ${member.lastName}`;
     }
+});
+
+
+// LIKE componentDidMount() ON REACT
+Template.members.onRendered(() => {
+    $('#modal1').modal(); // YOU CAN USE jQuery OVER HERE!!
+});
+
+// LIKE componentDidMount() ON REACT
+Template.rooms.onRendered(() => {
+    $('.collapsible').collapsible(); // YOU CAN USE jQuery OVER HERE!!
 });
 
