@@ -1,11 +1,19 @@
 <template name="rooms">
-    <ul>
+    <div class="collection">
         {{#each rooms}}
             {{> room}}
         {{/each}}
-    </ul>
+    </div>
 </template>
 
 <template name="room">
-    <li>Room {{roomNumber}}</li>
+    <a href="#!" class="collection-item">
+        {{#if available}}
+            <span class="new badge" data-badge-caption="">{{roomNumber}}</span>
+        {{else}}
+            <span class="new badge red" data-badge-caption="">{{roomNumber}}</span>
+        {{/if}}
+        Available: {{#if available}} Yes {{else}} No {{/if}}<br/>
+        Tenant: {{tenantID}}
+    </a>
 </template>
