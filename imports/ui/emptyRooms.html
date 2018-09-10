@@ -1,0 +1,31 @@
+<template name="emptyRooms">
+    {{#if currentUser}}
+        Click on the room to change anything
+        <ul class="collapsible" data-collapsible="accordion">
+            {{#each emptyRooms}}
+                {{> emptyRoom}}
+            {{/each}}
+        </ul>
+    {{else}}
+        You need to be logged in first!!!
+    {{/if}}
+</template>
+
+<template name="emptyRoom">
+    <li>
+        <div class="collapsible-header">
+            Available: {{#if available}} Yes {{else}} No {{/if}}<br/>
+            Tenant: {{returnName tenantID}}
+            {{#if available}}
+                <span class="new badge" data-badge-caption="">{{roomNumber}}</span>
+            {{else}}
+                <span class="new badge red" data-badge-caption="">{{roomNumber}}</span>
+            {{/if}}
+        </div>
+        <div class="collapsible-body">
+            <h5>Change Room Status</h5>
+            <!--ADDING autosave LETS FORM SAVE IN REAL-TIME WITHOUT HITTING 'submit' BUTTON-->
+            {{> quickForm collection="Rooms" type="update" doc=this autosave=true id=makeUniqueID}}
+        </div>
+    </li>
+</template>

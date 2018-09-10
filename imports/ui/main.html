@@ -1,0 +1,14 @@
+<template name="main">
+    <div class="row">
+        {{#if currentUser}}
+            <div class="col s8">
+                {{> members}}
+            </div>
+            <div class="col s4">
+                {{> rooms}}
+            </div>
+        {{else}}
+            You need to be logged in first!!
+        {{/if}}
+    </div>
+</template>
