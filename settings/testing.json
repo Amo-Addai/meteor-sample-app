@@ -1,0 +1,7 @@
+{
+  "private": {
+    "facebook": {
+      "appId": "id string", "secret": "secret string"
+    }
+  }
+}

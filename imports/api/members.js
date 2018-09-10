@@ -6,6 +6,17 @@ SimpleSchema.extendOpitons(['autoform']);
 
 const Members = new Mongo.Collection('members');
 
+Members.allow({ // ALLOW (OR NOT) DB FUNCTIONS DIRECTLY FROM CLIENT (SKIPPING THE SERVER)
+    insert() { return false; },
+    update() { return false; },
+    remove() { return false; },
+});
+Members.deny({ // DENY (OR NOT) DB FUNCTIONS DIRECTLY FROM CLIENT (SKIPPING THE SERVER)
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; },
+});
+
 const MemberSchema = new SimpleSchema({
     firstName: {type: String},
     lastName: {type: String},

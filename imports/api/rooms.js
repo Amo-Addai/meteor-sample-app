@@ -6,6 +6,17 @@ SimpleSchema.extendOpitons(['autoform']);
 
 const Rooms = new Mongo.Collection('rooms');
 
+Rooms.allow({ // ALLOW (OR NOT) DB FUNCTIONS DIRECTLY FROM CLIENT (SKIPPING THE SERVER)
+   insert() { return false; },
+   update() { return false; },
+   remove() { return false; },
+});
+Rooms.deny({ // DENY (OR NOT) DB FUNCTIONS DIRECTLY FROM CLIENT (SKIPPING THE SERVER)
+   insert() { return true; },
+   update() { return true; },
+   remove() { return true; },
+});
+
 const RoomSchema = new SimpleSchema({
     roomNumber: {type: Number},
     checkIn: {type: Date},

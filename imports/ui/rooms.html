@@ -22,6 +22,8 @@
             <h5>Change Room Status</h5>
             <!--ADDING autosave LETS FORM SAVE IN REAL-TIME WITHOUT HITTING 'submit' BUTTON-->
             {{> quickForm collection="Rooms" type="update" doc=this autosave=true id=makeUniqueID}}
+            <!-- OR, USE THIS IN CASE YOU CREATED A Method.methods({ insertMember: (){} });-->
+            <!--{{> quickForm collection="Rooms" type="method-update" meteormethod="updateRoom" doc=this autosave=true id=makeUniqueID}}-->
         </div>
     </li>
 </template>

@@ -35,13 +35,16 @@ Meteor.startup(() => {
                 lastCheckout = faker.date.past(),
                 numberOfNights = faker.random.number(40),
                 preferences = faker.random.words();
-            Members.insert({
+            const m = {
                 firstName, lastName,
                 member, street, city,
                 state, zip, lastCheckout,
                 numberOfNights, preferences,
                 createdAt: new Date()
-            })
+            };
+            Members.insert(m);
+            // YOU CAN CALL A METHOD FROM methods.js
+            Meteor.call('insertMember', {m});
         })
     }
 
@@ -54,13 +57,16 @@ Meteor.startup(() => {
             roomNumber++; // INCREMENT SO IT'S ALWAYS UNIQUE!!
             const checkIn = faker.date.past(),
                 checkOut = faker.date.future();
-            Rooms.insert({
+            const r = {
                 roomNumber, checkIn, checkOut,
                 tenandID: "No one",
                 available: true,
                 needCleaning: true,
                 createdAt: new Date()
-            })
+            };
+            Rooms.insert(r);
+            // YOU CAN CALL A METHOD FROM methods.js
+            Meteor.call('insertRoom', {r});
 
             return roomNumber;
         })

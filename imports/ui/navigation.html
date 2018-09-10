@@ -1,11 +1,13 @@
 <template name="navigation">
     <nav>
         <div class="nav-wrapper teal">
-            <a href="#" class="brand-logo">Hotel Landon</a>
+            <a href="#" class="brand-logo">
+                <img src="/public/logo.png" />
+            </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>{{> loginButtons}}</li>
                 <li><a href="/">Home</a></li>
                 <li><a href="/emptyRooms">Empty Rooms</a></li>
-                <li>{{> loginButtons}}</li>
             </ul>
         </div>
     </nav>

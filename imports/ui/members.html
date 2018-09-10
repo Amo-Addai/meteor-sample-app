@@ -14,6 +14,8 @@
             <h4>Add new member</h4>
             <!-- "window.Members = Members;" IN body.js ALLOWS YOU TO DO THIS AUTO-FORM-->
             {{> quickForm collection="Members" id="insertMemberForm" type="insert"}}
+            <!-- OR, USE THIS IN CASE YOU CREATED A Method.methods({ insertMember: (){} });-->
+            <!--{{> quickForm collection="Members" id="insertMemberForm" type="method" meteormethod="insertMember"}}-->
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">

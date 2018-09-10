@@ -4,6 +4,9 @@ import {Template} from 'meteor/templating';
 import {Members} from '../api/members';
 import {Rooms} from '../api/rooms';
 import './body.html';
+// METEOR MAKES SURE THAT ALL body.css STYLES ARE APPLIED TO THE PROJECT
+// EVEN IF YOU DON'T USE <link> TAG IN ANY .html FILE :)
+import './body.css';
 import './members.html';
 import './rooms.html';
 import './main.html';
@@ -85,7 +88,7 @@ Template.rooms.onRendered(() => {
 });
 
 
-//  CREATING ROUTES FOR THE APPLICATION (USING THE MAIN TEMPLATE 'layout' :)
+//  CREATING CLIENT-SIDE ROUTES FOR THE APPLICATION (USING THE MAIN TEMPLATE 'layout' :)
 Router.route("/", function () {
     this.layout('layout');
     this.render('main');
@@ -93,4 +96,17 @@ Router.route("/", function () {
 Router.route("/emptyRooms", function () {
     this.layout('layout');
     this.render('emptyRooms');
+});
+
+// CREATE SERVER-SIDE / REST API (HTTP REQUESTS) ROUTES
+Router.route('/url', function(){ // THIS IS THE MIDDLEWARE HANDLER
+   var req = this.request, res = this.response;
+   res.end('hello world from the server');
+}, {where: 'server'});
+
+//  insecure LIBRARY CAN PREVENT REST API,
+//  THEREFORE, RUN: meteor remove insecure
+//  THEN YOU CAN CREATE REST API WITH THIS CODE ...
+Meteor.methods({ // BUT PUT THIS CODE IN SERVER
+
 });
