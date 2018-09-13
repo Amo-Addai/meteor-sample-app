@@ -3,6 +3,7 @@ import {Template} from 'meteor/templating';
 
 import {Members} from '../api/members';
 import {Rooms} from '../api/rooms';
+
 import './body.html';
 // METEOR MAKES SURE THAT ALL body.css STYLES ARE APPLIED TO THE PROJECT
 // EVEN IF YOU DON'T USE <link> TAG IN ANY .html FILE :)
@@ -31,7 +32,7 @@ Template.body.onCreated(function () {
 // THESE HELPERS ARE GENERAL TO ALL TEMPLATES
 Template.registerHelper('formatDate', (date) => {
     // ACTUALLY, moment ISN'T A DEPENDENCY YOU INSTALLED WITH npm
-    // THEREFORE, YOU DON'T NEED TO import { moment }
+    // THEREFORE, YOU DON'T NEED TO imports { moment }
     return moment(date).format('MMM Do YYYY');
 });
 
@@ -56,7 +57,7 @@ Template.room.helpers({
     },
     returnName(tenantID) {
         const member = Members.findOne({_id: tenantID});
-        return `${member.firstNname} ${member.lastName}`;
+        return `${member.firstName} ${member.lastName}`;
     }
 });
 
@@ -97,12 +98,6 @@ Router.route("/emptyRooms", function () {
     this.layout('layout');
     this.render('emptyRooms');
 });
-
-// CREATE SERVER-SIDE / REST API (HTTP REQUESTS) ROUTES
-Router.route('/url', function(){ // THIS IS THE MIDDLEWARE HANDLER
-   var req = this.request, res = this.response;
-   res.end('hello world from the server');
-}, {where: 'server'});
 
 //  insecure LIBRARY CAN PREVENT REST API,
 //  THEREFORE, RUN: meteor remove insecure

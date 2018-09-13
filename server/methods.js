@@ -6,6 +6,7 @@ import {Rooms} from '../imports/api/rooms';
 //  insecure LIBRARY CAN PREVENT REST API,
 //  THEREFORE, RUN: meteor remove insecure
 //  THEN YOU CAN CREATE REST API WITH THIS CODE ...
+
 Meteor.methods({ // BUT PUT THIS CODE IN SERVER
     insertMember: (x) => {
         Members.insert(x)
@@ -18,3 +19,9 @@ Meteor.methods({ // BUT PUT THIS CODE IN SERVER
         Rooms.update(x._id, {$set: {checkIn, checkOut, tenantID, available, needCleaning}});
     },
 });
+
+// CREATE SERVER-SIDE / REST API (HTTP REQUESTS) ROUTES
+Router.route('/url', function(){ // THIS IS THE MIDDLEWARE HANDLER
+    var req = this.request, res = this.response;
+    res.end('hello world from the server');
+}, {where: 'server'});
