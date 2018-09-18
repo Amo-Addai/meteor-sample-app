@@ -28,6 +28,11 @@ Template.body.onCreated(function () {
     // THIS FEATURE IS CALLED pub-sub (PUBLISH-SUBSCRIBE)
     Meteor.subscribe('members.allMembers');
     Meteor.subscribe('rooms.allRooms');
+
+    //  YOU CAN ALSO CALL ANY OF THE METEOR METHODS DEFINED ON THE SERVER
+    Meteor.call('NAME_OF_METHOD', {/*params*/}, (err, res)=> {
+        console.log("CALL BACK!!");
+    })
 });
 
 // THESE HELPERS ARE GENERAL TO ALL TEMPLATES
