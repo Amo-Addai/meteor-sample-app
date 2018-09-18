@@ -1,18 +1,19 @@
 import {Meteor} from 'meteor/meteor';
 import {Template} from 'meteor/templating';
 
-import {Members} from '../api/members';
-import {Rooms} from '../api/rooms';
-
 import './body.html';
+import './body.css';
 // METEOR MAKES SURE THAT ALL body.css STYLES ARE APPLIED TO THE PROJECT
 // EVEN IF YOU DON'T USE <link> TAG IN ANY .html FILE :)
-import './body.css';
 import './members.html';
 import './rooms.html';
 import './main.html';
 import './navigation.html';
 import './emptyRooms.html';
+
+//  YOU CAN ALSO IMPORT THE API TABLES IF YOU PREFER (eg. IF YOU WANT TO USE THEM AS AUTOFORMS) ...
+import { Members } from '../api/members';
+import { Rooms } from '../api/rooms';
 
 // THIS SETS THE DEFAULT TEMPLATE STYLING TO materialize (SO YOU CAN USE IT WELL)
 AutoForm.setDefaultTemplate('materialize');

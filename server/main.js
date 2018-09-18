@@ -20,6 +20,46 @@ Meteor.startup(() => {
         return Members.find();
     });
 
+    Meteor.publish('SAMPLE_PLUBISHER', () => {
+
+        this.added(() => {
+            // .changed(), removed, ready, onStop, stopped, error, connection() TOO DEY :)
+            this.stop(); // THIS CANCELS THE CURRENT CLIENT'S SUBSCRIPTION
+            // AND THEN INVOKES this.onStop() WITHOUT RAISING AN ERROR
+        });
+
+        const interval = Meteor.setInterval(()=>{console.log(".")}, POLL_INTERVAL);
+
+        this.onStop(() => { // THIS CODE WILL RUN WHEN ANY CLIENT UNSUBSCRIBES TO THIS 'SAMPLE PUBLISHER'
+            Meteor.clearInterval(interval);
+        });
+
+        return [];
+    });
+    // curl 'localhost:3000/publications/SAMPLE_PLUBISHER' -> returns []
+    //  OR
+    /* # First, we need to "login" on the commandline to get an access token
+    $ curl localhost:3000/users/SAMPLE_PLUBISHER  -H "Content-Type: application/json" --data '{"email": "user@example.com", "password": "password"}'
+    {
+        "id": "wq5oLMLi2KMHy5rR6",
+        "token": "6PN4EIlwxuVua9PFoaImEP9qzysY64zM6AfpBJCE6bs",
+        "tokenExpires": "2016-02-21T02:27:19.425Z"
+    }
+
+    # Then, we can make an authenticated API call
+    $ curl localhost:3000/publications/SAMPLE_PLUBISHER -H "Authorization: Bearer 6PN4EIlwxuVua9PFoaImEP9qzysY64zM6AfpBJCE6bs"
+    {
+        "Lists": [
+        {
+            "_id": "92XAn3rWhjmPEga4P",
+            "name": "My Private List",
+            "incompleteCount": 5,
+            "userId": "wq5oLMLi2KMHy5rR6"
+        }
+    ]
+    } */
+
+
     const numberMembers = Members.find().count();
     console.log(numberMembers + " members available");
     if (!numberMembers) { // SEEDING THD DB WITH Members
